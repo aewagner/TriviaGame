@@ -6,7 +6,7 @@ var intervalId;
 
 var timerRunning = false;
 
-var decrement = 0;
+var decrement;
 
 
 
@@ -19,22 +19,35 @@ var timer = {
 		console.log("start")
 		console.log(timer.time);
 
-		if (timer.time === 120) {
-			console.log("next question!")
-		}
+		// if (decrement === 120) {
+		// 	console.log("next question!")
+		//}
 	},
 
 	count: function() {
 
-		var decrement = timer.time--;
+		decrement = timer.time--;
 		console.log("count");
 		console.log(timer.time);
 
+		if (decrement === 145) {
+			console.log("next question!")
+		};
+
 	},
+
+	// newQuestion: function () { 
+
+	// 	if (decrement === 120) {
+	// 		console.log("next question!")
+	// 	};
+
+	// },
 
 };
 
 $("button").on("click", timer.start);
+$("button").on("click", timer.newQuestion);
 
 
 
